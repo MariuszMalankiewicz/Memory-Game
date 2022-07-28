@@ -1,0 +1,105 @@
+*{
+    box-sizing: border-box;
+    text-decoration: none;
+}
+a{
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+}
+
+
+body{
+    position: relative;
+    height: 100vh;
+    min-height: 500px;
+    width: 100vw;
+    min-width: 320px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow-x: hidden;
+
+}
+/* INDEX */
+.welcome-img{
+    padding: 40px 0px;
+}
+.welcome-img img{
+    width: 100%;
+}
+.instruction{
+    margin-top: 40px;
+}
+@keyframes button-lets-start {
+    0%{
+        transform: scale(1);
+        border-radius: 78% 22% 72% 28% / 19% 74% 26% 81%;
+    }
+    50%{
+        transform: scale(1.1);
+        border-radius: 53% 47% 25% 75% / 61% 64% 36% 39%;
+    }
+    100%{
+        transform: scale(.9);
+        border-radius: 67% 33% 62% 38% / 22% 37% 63% 78%;
+    }
+}
+.small{
+    font-size: 1rem;
+    color: rgb(128, 128, 128);
+}
+/* INSTRUCTION */
+.instruction-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 300px;
+}
+.instruction-wrapper p{
+    padding-bottom: 10px;
+    text-align: justify;
+    line-height: 1.4;
+    letter-spacing: .5px;
+}
+/* MOVE-BUTTON */
+.move-button{
+    padding: 40px 80px;
+    border: none;
+    background-image: linear-gradient(to right bottom, #f33636, #fa438f, #d573d5, #969bf9, #5db6f9);
+    border-radius: 25% 75% 17% 83% / 43% 45% 55% 57%;
+    box-shadow: 0px 10px 10px 5px rgba(0,0,0, 0.2);
+    animation: button-lets-start 2s ease-in-out alternate infinite;
+}
+
+
+/* GAME */
+.wrapper-main{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-image: url(imgs/bg-game.jpg);
+}
+.cards-wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    width: 80%;
+    max-width: 600px;
+    height: 60%;
+    margin-bottom: 40px;
+}
+.card-body{
+    width: 30%;
+    height: 45%;
+    border-radius: 20px;
+    background-image: url(imgs/bg-body-card.jpg);
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+}
