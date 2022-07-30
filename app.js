@@ -1,57 +1,56 @@
 const CardArray =[{
-    id: 0,
+    name: 'sherek',
     img: 'imgs/one.jpg'
 },
 {
-    id: 1,
+    name: 'cat',
     img: 'imgs/two.jpg'
 },
 {
-    id: 2,
+    name: 'donkey',
     img: 'imgs/three.jpg'
 },
 {
-    id: 3,
+    name: 'fiona',
     img: 'imgs/four.jpg'
 },
 {
-    id: 4,
+    name: 'dragon',
     img: 'imgs/five.jpg'
 },
 {
-    id: 5,
+    name: 'cookies',
     img: 'imgs/six.jpg'
 },
 {
-    id: 0,
-    img: 'imgs/one.jpg'
+name: 'sherek',
+img: 'imgs/one.jpg'
 },
 {
-    id: 1,
-    img: 'imgs/two.jpg'
+name: 'cat',
+img: 'imgs/two.jpg'
 },
 {
-    id: 2,
-    img: 'imgs/three.jpg'
+name: 'donkey',
+img: 'imgs/three.jpg'
 },
 {
-    id: 3,
-    img: 'imgs/four.jpg'
+name: 'fiona',
+img: 'imgs/four.jpg'
 },
 {
-    id: 4,
-    img: 'imgs/five.jpg'
+name: 'dragon',
+img: 'imgs/five.jpg'
 },
 {
-    id: 5,
-    img: 'imgs/six.jpg'
-}
+name: 'cookies',
+img: 'imgs/six.jpg'
+},
 ]
 
-let ChooseCards = [];
+let ChooseCardsNames = [];
 let ChooseCardsIds = [];
-const CardsWon = [];
-
+const WonCards = [];
 const CardWrapper = document.querySelector('.cards-wrapper');
 
 function CreateCard(){
@@ -66,15 +65,23 @@ function CreateCard(){
 
 CreateCard();
 
-function MatchCard(){
+function CheckMatchCard(){
     const Cards = document.querySelectorAll('.cards-wrapper img');
-    if(ChooseCards[0] === ChooseCards[1]){
+
+
+    if(ChooseCardsNames[0] === ChooseCardsNames[1]){
         Cards[ChooseCardsIds[0]].style.display = 'none';
         Cards[ChooseCardsIds[1]].style.display = 'none';
-        CardsWon.push(ChooseCards);
+        WonCards.push(ChooseCardsNames);
+        if(WonCards.length === CardArray.length/2){
+            alert('U WIN!');
+        }
+    }else{
+        Cards[ChooseCardsIds[0]].setAttribute('src', 'imgs/bg-body-card.jpg');
+        Cards[ChooseCardsIds[1]].setAttribute('src', 'imgs/bg-body-card.jpg');
     }
-
-
+    ChooseCardsNames = [];
+    ChooseCardsIds = [];
 }
 
 function FlipCard(){
@@ -82,9 +89,17 @@ function FlipCard(){
     this.style.transform = 'RotateY(360deg)';
     let CardId = this.getAttribute('id-data');
     this.setAttribute('src', CardArray[CardId].img);
-    ChooseCards.push(CardArray[CardId].id);
+    ChooseCardsNames.push(CardArray[CardId].name);
     ChooseCardsIds.push(CardId);
-    if(ChooseCards.length === 2){
-        setTimeout(MatchCard, 500);
+    if(ChooseCardsIds[0] === ChooseCardsIds[1]){
+        this.setAttribute('src', 'imgs/bg-body-card.jpg');
+        ChooseCardsNames = [];
+        ChooseCardsIds = [];
+    }
+    console.log(ChooseCardsNames);
+    console.log(ChooseCardsIds);
+    if(ChooseCardsNames.length === 2){
+        setTimeout(CheckMatchCard, 500);
     }
 }
+
