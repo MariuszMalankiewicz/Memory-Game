@@ -6,8 +6,6 @@ a{
     color: rgb(255, 255, 255);
     font-weight: bold;
 }
-
-
 body{
     position: relative;
     height: 100vh;
@@ -19,17 +17,127 @@ body{
     align-items: center;
     flex-direction: column;
     overflow-x: hidden;
-
+}
+.small{
+    font-size: 1rem;
+    color: rgb(128, 128, 128);
+}
+.move-button p{
+    color: #fff;
+    font-weight: bolder;
+    letter-spacing: .5px;
 }
 /* INDEX */
+.index-wrapper{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
 .welcome-img{
-    padding: 40px 0px;
+    height: 40%;
+    display: flex;
+    align-items: flex-end;
 }
 .welcome-img img{
     width: 100%;
 }
-.instruction{
-    margin-top: 40px;
+.join-to-game{
+    height: 40%;
+    display: flex;
+    align-items: center;
+}
+.read-instruction{
+    height: 20%;
+    display: flex;
+    align-items: flex-start;
+}
+/* INSTRUCTION */
+.instruction-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 300px;
+}
+.instruction-wrapper p{
+    padding-bottom: 20px;
+    text-align: justify;
+    line-height: 1.4;
+    letter-spacing: .5px;
+}
+/* MOVE-BUTTON */
+.move-button{
+    height: 120px;
+    width: 240px;
+    border: none;
+    cursor: pointer;
+    background-image: linear-gradient(to right bottom, #f33636, #fa438f, #d573d5, #969bf9, #5db6f9);
+    border-radius: 25% 75% 17% 83% / 43% 45% 55% 57%;
+    box-shadow: 0px 10px 10px 5px rgba(0,0,0, 0.2);
+    animation: button-lets-start 2s ease-in-out alternate infinite;
+}
+/* GAME */
+.wrapper-main{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-image: url(imgs/bg-game.jpg);
+}
+.title{
+    position: relative;
+    height: 20%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.fa-arrow-left-long{
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: 2rem;
+}
+.title h1{
+    justify-self: center;
+    background-image: linear-gradient(to right bottom, #f33636, #fa438f, #d573d5, #969bf9, #5db6f9);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+.info{
+    height: 10%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.info p{
+    color: #fff;;
+    font-weight: bolder;
+}
+.cards-wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    height: 70%;
+    width: 100%;
+    max-width: 700px;
+    overflow-y: auto;
+}
+.cards-wrapper img{
+    height: 150px;
+    width: 100px;
+    background-image: center;
+    margin: 5px;
+    cursor: pointer;
 }
 @keyframes button-lets-start {
     0%{
@@ -44,61 +152,4 @@ body{
         transform: scale(.9);
         border-radius: 67% 33% 62% 38% / 22% 37% 63% 78%;
     }
-}
-.small{
-    font-size: 1rem;
-    color: rgb(128, 128, 128);
-}
-/* INSTRUCTION */
-.instruction-wrapper{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    width: 300px;
-}
-.instruction-wrapper p{
-    padding-bottom: 10px;
-    text-align: justify;
-    line-height: 1.4;
-    letter-spacing: .5px;
-}
-/* MOVE-BUTTON */
-.move-button{
-    padding: 40px 80px;
-    border: none;
-    background-image: linear-gradient(to right bottom, #f33636, #fa438f, #d573d5, #969bf9, #5db6f9);
-    border-radius: 25% 75% 17% 83% / 43% 45% 55% 57%;
-    box-shadow: 0px 10px 10px 5px rgba(0,0,0, 0.2);
-    animation: button-lets-start 2s ease-in-out alternate infinite;
-}
-
-
-/* GAME */
-.wrapper-main{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    background-image: url(imgs/bg-game.jpg);
-}
-.cards-wrapper{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: center;
-    height: 60%;
-    width: 100%;
-    max-width: 600px;
-    margin-bottom: 40px;
-    overflow-y: auto;
-}
-.cards-wrapper img{
-    height: 150px;
-    width: 100px;
-    background-image: center;
-    padding: 5px;
-    cursor: pointer;
 }
