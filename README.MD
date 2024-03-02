@@ -6,7 +6,7 @@
 * [Setup](#setup)
 
 ## General info
-A simple memorization game you have to find the pairs. The goal of the project was learning html, css and java script.
+A simple memorization game you have to find the pairs, the goal of the project was learning html, css and java script.
 	
 ## Technologies
 Project is created with:
