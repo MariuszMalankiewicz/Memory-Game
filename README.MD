@@ -1,5 +1,19 @@
 # Memory Game
 
-a simple memorization game you have to find the pairs
+## Table of contents
+* [General info](#general-info)
+* [Technologies](#technologies)
+* [Setup](#setup)
 
-live link: https://mariuszmalankiewicz.github.io/Memory-Game/
+## General info
+A simple memorization game you have to find the pairs. The goal of the project was learning html, css and java script.
+	
+## Technologies
+Project is created with:
+* HTML 5
+* CSS 3
+* Java Script
+	
+## Setup
+* Clone this repo to your desktop
+* Run start file index.html
